@@ -8,13 +8,13 @@ function Navigation() {
   const location = useLocation();
 
   return (
-    <Navbar bg="custom" variant="dark" expand="lg" className="navbar-custom sticky-top shadow-sm">
+    <Navbar bg="custom" variant="light" expand="lg" className="navbar-custom sticky-top shadow-sm">
       <Container>
         <Navbar.Brand as={Link} to="/" className="fs-3 fw-bold d-flex align-items-center">
-          <img 
-            src={cedarLogo} 
-            alt="Cèdre" 
-            height="40" 
+          <img
+            src={cedarLogo}
+            alt="Cèdre"
+            height="40"
             width="40"
             className="me-2 rounded-circle border border-white"
             style={{ objectFit: 'cover', backgroundColor: '#fff' }}
