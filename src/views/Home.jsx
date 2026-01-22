@@ -5,9 +5,9 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
-import mezzeImg from '../assets/mezze.jpg';
-import grillImg from '../assets/grill.jpg';
-import dessertImg from '../assets/dessert.jpg';
+import mezzeImg from '../assets/mezze_authentic.jpg';
+import grillImg from '../assets/grill_ue.jpg';
+import dessertImg from '../assets/baklava-final.jpg';
 import SpotlightCard from '../components/SpotlightCard';
 
 function Home() {

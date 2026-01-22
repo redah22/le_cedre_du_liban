@@ -1,16 +1,19 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
 import './MagicBento.css';
-import mezzeBentoImg from '../assets/mezze.jpg'; // Reusing successful download
-import dessertBentoImg from '../assets/dessert_bento.jpg';
-import coffeeBentoImg from '../assets/coffee_bento.jpg';
+import mezzeBentoImg from '../assets/mezze_authentic.jpg';
+import dessertBentoImg from '../assets/baklava-final.jpg';
+import coffeeBentoImg from '../assets/mint_tea.jpg';
+import grillUE from '../assets/grill_ue.jpg';     // New Authentic Image
+import falafelUE from '../assets/falafel_ue.jpg'; // New Authentic Image
+import interiorBentoImg from '../assets/photo_interieur.jpg';
 
 const DEFAULT_PARTICLE_COUNT = 6;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = '255, 255, 255'; // Glow blanc sur images sombres
 const MOBILE_BREAKPOINT = 768;
 
-// Données adaptées pour le Restaurant avec Images
+// Données adaptées pour le Restaurant avec Images "Vraies"
 const cardData = [
   {
     image: mezzeBentoImg, // Mezzés Local
@@ -19,33 +22,33 @@ const cardData = [
     label: 'Entrées'
   },
   {
-    image: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=800&q=80', // Grillades (Keep URL or replace if needed)
+    image: grillUE, // Grillades Local (Uber Eats)
     title: 'Grillades au Feu de Bois',
     description: 'Brochettes de poulet, agneau et kefta marinés aux épices.',
     label: 'Plats'
   },
   {
-    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80', // Végétarien
+    image: falafelUE, // Végétarien (Uber Eats)
     title: 'Spécialités Végétariennes',
     description: 'Falafels croustillants, feuilles de vigne et beignets.',
     label: 'Végé'
   },
   {
-    image: dessertBentoImg, // Dessert Local
+    image: dessertBentoImg, // Dessert Local (Waiting for update)
     title: 'Desserts Maison',
     description: 'Douceurs au miel et à la pistache : Baklawa, Mouhalabieh.',
     label: 'Sucré'
   },
   {
-    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80', // Vin
+    image: interiorBentoImg, // Vins (Ambiance/Cave vibe)
     title: 'Vins du Liban',
     description: 'Sélection des meilleurs crus de la vallée de la Bekaa.',
     label: 'Cave'
   },
   {
-    image: coffeeBentoImg, // Café Local
+    image: coffeeBentoImg, // Maintenant Thé à la menthe
     title: 'Thés & Cafés',
-    description: 'Thé à la menthe fraîche ou café blanc à la fleur d\'oranger.',
+    description: 'Thé à la menthe fraîche authentique ou café blanc.',
     label: 'Boissons'
   }
 ];
@@ -360,7 +363,7 @@ const GlobalSpotlight = ({
 
       const section = gridRef.current.closest('.bento-section');
       const rect = section?.getBoundingClientRect();
-      const mouseInside = 
+      const mouseInside =
         rect && e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
 
       isInsideSection.current = mouseInside || false;
@@ -542,7 +545,7 @@ const MagicBento = ({
               {...cardProps}
               ref={el => {
                 // Simplified ref logic for non-star cards
-                 if (!el) return;
+                if (!el) return;
 
                 const handleMouseMove = e => {
                   if (shouldDisableAnimations) return;
@@ -591,7 +594,7 @@ const MagicBento = ({
                 el.addEventListener('mouseleave', handleMouseLeave);
               }}
             >
-             <div className="magic-bento-card__header">
+              <div className="magic-bento-card__header">
                 <div className="magic-bento-card__label">{card.label}</div>
               </div>
               <div className="magic-bento-card__content">

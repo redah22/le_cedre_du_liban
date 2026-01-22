@@ -59,24 +59,59 @@ function Menu() {
         className="mb-4 justify-content-center custom-tabs"
         fill
       >
-        <Tab eventKey="entrees" title="Entrées & Mezzés">
-          {renderItems(menuData.entrees)}
+        <Tab eventKey="entrees" title="Entrées">
+          <h3 className="section-title text-center mt-3">Entrées Chaudes</h3>
+          {renderItems(menuData.entreesChaudes)}
+          <h3 className="section-title text-center mt-5">Entrées Froides</h3>
+          {renderItems(menuData.entreesFroides)}
         </Tab>
-        <Tab eventKey="plats" title="Plats & Grillades">
-          {renderItems(menuData.plats)}
+        <Tab eventKey="mezzes" title="Menus & Mezzés">
+          <h3 className="section-title text-center mt-3">Le Mezzé (À Partager)</h3>
+          {renderItems(menuData.mezzes)}
+        </Tab>
+        <Tab eventKey="plats" title="Grillades">
+          <h3 className="section-title text-center mt-3">Nos Grillades (Feu de Bois)</h3>
+          {renderItems(menuData.grillades)}
         </Tab>
         <Tab eventKey="desserts" title="Desserts">
           {renderItems(menuData.desserts)}
         </Tab>
+        <Tab eventKey="boissons" title="Boissons & Vins">
+          <h3 className="section-title text-center mt-3">Apéritifs</h3>
+          {renderItems(menuData.aperitifs)}
+          <h3 className="section-title text-center mt-5">Carte des Vins</h3>
+          {renderItems(menuData.vins)}
+          <h3 className="section-title text-center mt-5">Boissons Fraîches & Chaudes</h3>
+          {renderItems(menuData.boissons)}
+        </Tab>
       </Tabs>
 
       <div className="mt-5 d-flex justify-content-center">
-        <div style={{ maxWidth: '600px', width: '100%' }}>
+        <div style={{ maxWidth: '800px', width: '100%' }}>
           <StarBorder color="#B71C1C" speed="4s" highlight={true}>
-            <h4>Formule Midi</h4>
-            <p className="lead">Entrée + Plat ou Plat + Dessert</p>
-            <p className="fw-bold fs-4 text-primary">15.90€</p>
-            <small className="text-muted">Uniquement le midi, du lundi au vendredi.</small>
+            <div className="row">
+              <div className="col-md-12 text-center mb-4">
+                <h4 className="display-6 font-ortica mb-0">Formules Midi</h4>
+                <small className="text-muted">Uniquement le midi, du lundi au vendredi (Café ou Thé inclus)</small>
+              </div>
+              <div className="col-md-6 text-center border-end-md">
+                <p className="fw-bold fs-3 text-primary mb-1">15,00 €</p>
+                <p className="fw-bold mb-2">1 Plat au Choix</p>
+                <ul className="list-unstyled text-muted small">
+                  <li>Le Cèdre (Assiette complète)</li>
+                  <li>OU Chiche Taouk (Poulet)</li>
+                  <li>OU Kafta (Viande hachée)</li>
+                </ul>
+              </div>
+              <div className="col-md-6 text-center">
+                <p className="fw-bold fs-3 text-primary mb-1">19,00 €</p>
+                <p className="fw-bold mb-2">1 Entrée + 1 Plat</p>
+                <ul className="list-unstyled text-muted small">
+                  <li><strong>Entrée :</strong> Hommos, Moutabal, Taboulé...</li>
+                  <li><strong>Plat :</strong> Chiche Taouk ou Kafta</li>
+                </ul>
+              </div>
+            </div>
           </StarBorder>
         </div>
       </div>
