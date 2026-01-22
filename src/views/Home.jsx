@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import mezzeImg from '../assets/mezze_authentic.jpg';
 import grillImg from '../assets/grill_ue.jpg';
-import dessertImg from '../assets/baklava-final.jpg';
+import taboulehImg from '../assets/tabouleh_ue.jpg';
 import SpotlightCard from '../components/SpotlightCard';
 
 function Home() {
@@ -74,11 +74,11 @@ function Home() {
             </Col>
             <Col md={4} className="mb-4">
               <Card className="h-100 shadow-sm border-0">
-                <Card.Img variant="top" src={dessertImg} style={{ height: '250px', objectFit: 'cover' }} />
+                <Card.Img variant="top" src={taboulehImg} style={{ height: '250px', objectFit: 'cover' }} />
                 <Card.Body>
-                  <Card.Title>Douceurs Orientales</Card.Title>
+                  <Card.Title>Authentique Taboulé</Card.Title>
                   <Card.Text>
-                    Terminez sur une note sucrée avec nos Baklawas et thé à la menthe.
+                    Notre star : persil plat, menthe, tomates, oignons, citron et huile d'olive vierge.
                   </Card.Text>
                 </Card.Body>
               </Card>
