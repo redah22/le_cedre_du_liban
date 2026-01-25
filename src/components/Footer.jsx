@@ -25,7 +25,7 @@ function Footer() {
               <GeoAltFill className="me-2" /> 60 All. Paul Riquet, 34500 Béziers
             </p>
             <p className="small text-muted">
-              <TelephoneFill className="me-2" /> 04 67 76 95 38
+              <TelephoneFill className="me-2" /> 04 67 49 23 26
             </p>
           </Col>
         </Row>

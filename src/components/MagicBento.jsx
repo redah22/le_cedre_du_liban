@@ -1,4 +1,5 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import './MagicBento.css';
 import mezzeBentoImg from '../assets/mezze_authentic.jpg';
@@ -19,37 +20,43 @@ const cardData = [
     image: mezzeBentoImg, // Mezzés Local
     title: 'Nos Mezzés',
     description: 'Une farandole de saveurs : Houmous, Taboulé, Moutabal...',
-    label: 'Entrées'
+    label: 'Entrées',
+    targetTab: 'mezzes'
   },
   {
     image: grillUE, // Grillades Local (Uber Eats)
     title: 'Grillades au Feu de Bois',
     description: 'Brochettes de poulet, agneau et kefta marinés aux épices.',
-    label: 'Plats'
+    label: 'Plats',
+    targetTab: 'plats'
   },
   {
     image: falafelUE, // Végétarien (Uber Eats)
     title: 'Spécialités Végétariennes',
     description: 'Falafels croustillants, feuilles de vigne et beignets.',
-    label: 'Végé'
+    label: 'Végé',
+    targetTab: 'entrees'
   },
   {
     image: dessertBentoImg, // Dessert Local (Waiting for update)
     title: 'Desserts Maison',
     description: 'Douceurs au miel et à la pistache : Baklawa, Mouhalabieh.',
-    label: 'Sucré'
+    label: 'Sucré',
+    targetTab: 'desserts'
   },
   {
     image: interiorBentoImg, // Vins (Ambiance/Cave vibe)
     title: 'Vins du Liban',
     description: 'Sélection des meilleurs crus de la vallée de la Bekaa.',
-    label: 'Cave'
+    label: 'Cave',
+    targetTab: 'boissons'
   },
   {
     image: coffeeBentoImg, // Maintenant Thé à la menthe
     title: 'Thés & Cafés',
     description: 'Thé à la menthe fraîche authentique ou café blanc.',
-    label: 'Boissons'
+    label: 'Boissons',
+    targetTab: 'boissons'
   }
 ];
 
@@ -96,7 +103,8 @@ const ParticleCard = ({
   glowColor = DEFAULT_GLOW_COLOR,
   enableTilt = true,
   clickEffect = false,
-  enableMagnetism = false
+  enableMagnetism = false,
+  ...props
 }) => {
   const cardRef = useRef(null);
   const particlesRef = useRef([]);
@@ -318,6 +326,7 @@ const ParticleCard = ({
       ref={cardRef}
       className={`${className} particle-container`}
       style={{ ...style, position: 'relative', overflow: 'hidden' }}
+      onClick={props.onClick}
     >
       {children}
     </div>
@@ -490,6 +499,20 @@ const MagicBento = ({
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
+  const navigate = useNavigate();
+
+  const handleCardClick = (targetTab) => {
+    if (targetTab) {
+      navigate(`/menu#${targetTab}`);
+      // Fallback scroll if already on page or for ensuring view
+      setTimeout(() => {
+        const tabsElement = document.getElementById('menu-tabs');
+        if (tabsElement) {
+          tabsElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <>
@@ -512,8 +535,10 @@ const MagicBento = ({
               backgroundImage: `url(${card.image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              '--glow-color': glowColor
-            }
+              '--glow-color': glowColor,
+              cursor: 'pointer'
+            },
+            onClick: () => handleCardClick(card.targetTab)
           };
 
           if (enableStars) {

@@ -31,7 +31,7 @@ function Access() {
     <div style={{ minHeight: '100vh', paddingBottom: '4rem' }}>
       <Helmet>
         <title>Contact & Accès - Le Cèdre du Liban Béziers</title>
-        <meta name="description" content="Contactez le restaurant Le Cèdre du Liban à Béziers. Réservez votre table ou commandez à emporter. 04 67 76 95 38" />
+        <meta name="description" content="Contactez le restaurant Le Cèdre du Liban à Béziers. Réservez votre table ou commandez à emporter. 04 67 49 23 26" />
       </Helmet>
 
       {/* Hero Section */}
@@ -87,7 +87,7 @@ function Access() {
             </div>
             <div className="detail-text">
               <h4>TÉLÉPHONE</h4>
-              <a href="tel:0467769538">04 67 76 95 38</a>
+              <a href="tel:0467492326">04 67 49 23 26</a>
             </div>
           </div>
 
@@ -97,7 +97,7 @@ function Access() {
             </div>
             <div className="detail-text">
               <h4>EMAIL</h4>
-              <a href="mailto:contact@lecedreduliban.fr">contact@lecedreduliban.fr</a>
+              <a href="mailto:danielnasrallah@hotmail.com">danielnasrallah@hotmail.com</a>
             </div>
           </div>
         </div>

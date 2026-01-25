@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Container from 'react-bootstrap/Container';
 import Tabs from 'react-bootstrap/Tabs';
@@ -8,6 +10,26 @@ import SpotlightCard from '../components/SpotlightCard';
 import StarBorder from '../components/StarBorder';
 
 function Menu() {
+  const [activeTab, setActiveTab] = useState('entrees');
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const tab = location.hash.replace('#', '');
+      // Verify if tab exists in our keys to avoid setting invalid state
+      if (['entrees', 'mezzes', 'plats', 'desserts', 'boissons'].includes(tab)) {
+        setActiveTab(tab);
+        // Scroll to tabs
+        setTimeout(() => {
+          const element = document.getElementById('menu-tabs');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    }
+  }, [location]);
+
   const renderItems = (items) => (
     <div className="projects-grid">
       {items.map(item => (
@@ -54,7 +76,8 @@ function Menu() {
 
       <h2 className="text-center mb-4 mt-5 font-ortica">Détail des Plats</h2>
       <Tabs
-        defaultActiveKey="entrees"
+        activeKey={activeTab}
+        onSelect={(k) => setActiveTab(k)}
         id="menu-tabs"
         className="mb-4 justify-content-center custom-tabs"
         fill
