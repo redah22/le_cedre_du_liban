@@ -55,7 +55,8 @@ function Access() {
               <ClockFill />
             </div>
             <h3 className="contact-card-title">Horaires</h3>
-            <p className="mb-0">Lun-Sam: 12h-14h / 19h-22h</p>
+            <p className="mb-0">Lundi: 19h - 22h</p>
+            <p className="mb-0">Mar-Sam: 12h-14h / 19h-22h</p>
             <p className="text-muted">Dimanche: Fermé</p>
           </div>
 

@@ -15,7 +15,8 @@ function Footer() {
           <Col md={3} className="mb-4">
             <h5 className="text-uppercase tracking-wider">Horaires</h5>
             <ul className="list-unstyled small text-muted">
-              <li className="mb-2">Lun - Sam : 12h-14h & 19h-22h</li>
+              <li className="mb-2">Lundi : 19h - 22h</li>
+              <li className="mb-2">Mar - Sam : 12h-14h & 19h-22h</li>
               <li>Dimanche : Fermé</li>
             </ul>
           </Col>
