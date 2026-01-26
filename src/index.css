@@ -44,6 +44,13 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .home-background {
+    background-attachment: scroll;
+    background-position: center;
+  }
+}
+
 /* Heading Hierarchy */
 h1,
 h2,
