@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cedreduliban.com/sitemap.xml

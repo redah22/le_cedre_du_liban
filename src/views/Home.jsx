@@ -14,8 +14,53 @@ function Home() {
   return (
     <div className="home-background">
       <Helmet>
-        <title>Sur place livraison et emporter - Restaurant Libannais Le cedre du Liban à Béziers</title>
-        <meta name="description" content="Restauration sur place et en emporter de plats Libanais.Mezze et grillades à Béziers" />
+        <title>Le Cèdre du Liban - Restaurant Libanais à Béziers</title>
+        <meta name="description" content="Découvrez Le Cèdre du Liban à Béziers. Mezzés authentiques, grillades au feu de bois et vente à emporter. Cuisine maison traditionnelle." />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Restaurant",
+              "name": "Le Cèdre du Liban",
+              "image": "https://cedreduliban.com/mezze_cover.jpg",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "60 All. Paul Riquet",
+                "addressLocality": "Béziers",
+                "postalCode": "34500",
+                "addressCountry": "FR"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 43.3429381,
+                "longitude": 3.2188813
+              },
+              "telephone": "+33467492326",
+              "priceRange": "€€",
+              "servesCuisine": "Libanaise",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Monday",
+                  "opens": "19:00",
+                  "closes": "22:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  "opens": "12:00",
+                  "closes": "14:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  "opens": "19:00",
+                  "closes": "22:00"
+                }
+              ]
+            }
+          `}
+        </script>
       </Helmet>
 
       {/* Hero Section */}

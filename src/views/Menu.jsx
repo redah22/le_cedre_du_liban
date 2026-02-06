@@ -53,8 +53,8 @@ function Menu() {
   return (
     <Container className="py-5">
       <Helmet>
-        <title>La Carte & Menus - Le Cèdre du Liban Béziers</title>
-        <meta name="description" content="Découvrez notre carte de spécialités libanaises : Mezzés froids et chauds, Grillades, Desserts maison. Cuisine authentique à Béziers." />
+        <title>La Carte et Menus - Le Cèdre du Liban | Vente à emporter Béziers</title>
+        <meta name="description" content="Consultez notre carte : Mezzés, Grillades au feu de bois, Desserts (Baklawa) et Vins Libanais. Sur place ou à emporter à Béziers." />
       </Helmet>
       <h1 className="text-center mb-5 font-ortica">Notre Carte</h1>
 

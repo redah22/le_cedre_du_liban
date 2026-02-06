@@ -30,8 +30,8 @@ function Access() {
   return (
     <div style={{ minHeight: '100vh', paddingBottom: '4rem' }}>
       <Helmet>
-        <title>Contact & Accès - Le Cèdre du Liban Béziers</title>
-        <meta name="description" content="Contactez le restaurant Le Cèdre du Liban à Béziers. Réservez votre table ou commandez à emporter. 04 67 49 23 26" />
+        <title>Contact & Accès - Le Cèdre du Liban | Restaurant Béziers</title>
+        <meta name="description" content="Infos pratiques : Adresse (Allées Paul Riquet), Téléphone et Horaires d'ouverture. Réservez votre table au Cèdre du Liban Béziers." />
       </Helmet>
 
       {/* Hero Section */}
