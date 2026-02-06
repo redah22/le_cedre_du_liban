@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import Container from 'react-bootstrap/Container';
 import { GeoAltFill, TelephoneFill, ClockFill, EnvelopeFill, SendFill } from 'react-bootstrap-icons';
 
@@ -16,15 +17,33 @@ function Access() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const form = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('sending');
-    // Mock sending
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus(''), 3000);
-    }, 1500);
+
+    // REMPLACE CES VALEURS PAR LES TIENNES DEPUIS EMAILJS.COM
+    const SERVICE_ID = 'service_j0gc335';
+    const TEMPLATE_ID = 'template_34nvhya';
+    const PUBLIC_KEY = 'rEUyGhrhTdggEBqho';
+
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, form.current, {
+        publicKey: PUBLIC_KEY,
+      })
+      .then(
+        () => {
+          setStatus('success');
+          setFormData({ name: '', email: '', phone: '', message: '' });
+          setTimeout(() => setStatus(''), 5000);
+        },
+        (error) => {
+          console.error('FAILED...', error.text);
+          setStatus('error');
+          setTimeout(() => setStatus(''), 5000);
+        },
+      );
   };
 
   return (
@@ -121,7 +140,7 @@ function Access() {
             <p>Une question, une suggestion, une remarque ?</p>
           </div>
 
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <div className="custom-form-grid">
               <input
                 type="text"
@@ -166,6 +185,7 @@ function Access() {
             </button>
 
             {status === 'success' && <p className="text-success mt-3 text-center fw-bold">Message envoyé avec succès !</p>}
+            {status === 'error' && <p className="text-danger mt-3 text-center fw-bold">Erreur lors de l'envoi. Veuillez réessayer.</p>}
           </form>
         </div>
 
