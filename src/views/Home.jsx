@@ -6,8 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import mezzeImg from '../assets/mezze_authentic.jpg';
-import grillImg from '../assets/grill_ue.jpg';
-import taboulehImg from '../assets/tabouleh_ue.jpg';
+import grillImg from '../assets/grill.jpg';
+import taboulehImg from '../assets/mezze.jpg';
 import SpotlightCard from '../components/SpotlightCard';
 import { Bicycle } from 'react-bootstrap-icons';
 

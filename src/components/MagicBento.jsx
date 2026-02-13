@@ -5,8 +5,9 @@ import './MagicBento.css';
 import mezzeBentoImg from '../assets/mezze_authentic.jpg';
 import dessertBentoImg from '../assets/baklava-final.jpg';
 import coffeeBentoImg from '../assets/mint_tea.jpg';
-import grillUE from '../assets/grill_ue.jpg';     // New Authentic Image
-import falafelUE from '../assets/falafel_ue.jpg'; // New Authentic Image
+// Replaced deleted images with existing valid ones
+import grillUE from '../assets/grill.jpg';
+import falafelUE from '../assets/mezze.jpg';
 import interiorBentoImg from '../assets/photo_interieur.jpg';
 
 const DEFAULT_PARTICLE_COUNT = 6;
