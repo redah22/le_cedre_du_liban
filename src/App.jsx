@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navigation from './components/Navigation';
 import Home from './views/Home';
 import Menu from './views/Menu';
@@ -8,6 +9,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="d-flex flex-column min-vh-100">
         <Navigation />
         <div className="flex-grow-1">
