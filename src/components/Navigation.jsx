@@ -26,6 +26,9 @@ function Navigation() {
             <Nav.Link as={Link} to="/" active={location.pathname === '/'}>Accueil</Nav.Link>
             <Nav.Link as={Link} to="/menu" active={location.pathname === '/menu'}>La Carte</Nav.Link>
             <Nav.Link as={Link} to="/acces" active={location.pathname === '/acces'}>Accès & Contact</Nav.Link>
+            <Nav.Link href="https://www.ubereats.com/fr/store/le-cedre-du-liban/KhnL-qr4SxqnyE0-1GeC_g" target="_blank" className="btn btn-success text-white ms-lg-3 px-3 rounded-pill">
+              Commander
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

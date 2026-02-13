@@ -9,6 +9,7 @@ import mezzeImg from '../assets/mezze_authentic.jpg';
 import grillImg from '../assets/grill_ue.jpg';
 import taboulehImg from '../assets/tabouleh_ue.jpg';
 import SpotlightCard from '../components/SpotlightCard';
+import { Bicycle } from 'react-bootstrap-icons';
 
 function Home() {
   return (
@@ -73,7 +74,10 @@ function Home() {
         <Container>
           <h1 className="display-3 mb-3 font-ortica" style={{ color: '#FFFFFF', textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Le Cedre du Liban</h1>
           <p className="lead mb-4 fs-3 mx-auto">Voyagez au cœur des saveurs orientales à Béziers.</p>
-          <Button as={Link} to="/menu" variant="warning" size="lg" className="px-5 rounded-pill shadow-lg">Voir la Carte</Button>
+          <Button as={Link} to="/menu" variant="warning" size="lg" className="px-5 rounded-pill shadow-lg me-3">Voir la Carte</Button>
+          <Button href="https://www.ubereats.com/fr/store/le-cedre-du-liban/KhnL-qr4SxqnyE0-1GeC_g" target="_blank" variant="outline-light" size="lg" className="px-5 rounded-pill shadow-lg d-inline-flex align-items-center justify-content-center">
+            Uber Eats <Bicycle className="ms-2" size={20} />
+          </Button>
         </Container>
       </div>
 
